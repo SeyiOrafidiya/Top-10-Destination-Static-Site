@@ -1,6 +1,7 @@
 
 // Selects page elements
 let mainContainer = document.getElementById("myData");
+let userContainer = document.getElementById("userinput");
 
 fetch("https://tequila-api.kiwi.com/v2/search?fly_from=LON&fly_to=PRG&date_from=01%2F04%2F2021&date_to=05%2F04%2F2021&return_from=03%2F04%2F2021&return_to=04%2F04%2F2021", {
 	"method": "GET",
@@ -31,17 +32,23 @@ fetch("https://tequila-api.kiwi.com/v2/search?fly_from=LON&fly_to=PRG&date_from=
 
 let userFromInput = document.querySelector('#from');
 let userToInput = document.querySelector('#to');
-let userDateInput = document.getElementsByClassName('date');;
+let userDateDepart = document.getElementsByClassName('#datedepart');
+let userDateReturn = document.getElementsByClassName('#datereturn');
 let submit = document.querySelector('#submit');
 
-/*
-const getSuggestions = () => {
     const fromQuery = userFromInput.value;
     const toQuery = userToInput.value;
-    const dateDepart = userDateInput.value;
+    const dateDepart = userDateDepart.value;
+    const dateReturn = userDateReturn.value;
 
-    
-    fetch(`https://tequila-api.kiwi.com/v2/search?fly_from=${fromQuery}&fly_to=${toQuery}&date_from=${dateDepart}&date_to=${}`, {
+const getSuggestions = () => { //REDUCE THIS. user input place and gets aggregated airports, prices. DASSIT
+
+    const fromQuery = userFromInput.value;
+    const toQuery = userToInput.value;
+    const dateDepart = userDateDepart.value;
+    const dateReturn = userDateReturn.value;
+
+    fetch(`https://tequila-api.kiwi.com/v2/search?fly_from=${fromQuery}&fly_to=${toQuery}&date_from=${dateDepart}&date_to=${dateReturn}`, {
         "method": "GET",
         "headers": {
             "accept": "application/json",
@@ -54,5 +61,16 @@ const getSuggestions = () => {
     .catch(err => {
         console.error(err);
     })
-  }*/
-  
+    .then(jsonResponse => {
+        let div = document.createElement("div");
+        div.innerHTML = `Test: ${jsonResponse.data[1].cityFrom}`;
+        userContainer.appendChild(div);
+    })
+}
+
+const displaySuggestions = (event) => {
+    event.preventDefault();    
+    getSuggestions();
+  };
+
+  submit.addEventListener('click', displaySuggestions);

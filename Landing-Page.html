@@ -93,9 +93,16 @@
 
             <div class="input-group input-group-lg">
               <div class="input-group input-group-lg"> <!-- Make normal x2 input and submit dd mm yyyy. Take value from there  -->
-                <input type="text" name="daterange" id="date" value="Mar 01 2021 - Mar 20 2021" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                <input type="text" id="datedepart" placeholder="dd/mm/yyyy" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
               </div>
             </div>
+
+            <div class="input-group input-group-lg">
+              <div class="input-group input-group-lg"> <!-- Make normal x2 input and submit dd mm yyyy. Take value from there  -->
+                <input type="text" id="datereturn" placeholder="dd/mm/yyyy" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+              </div>
+            </div>
+  
           </div>
 
         </div>
@@ -113,6 +120,11 @@
       </div>
     </div>
 
+    <div class="row my-5">
+      <div class="col" id="userinput">
+
+      </div>
+    </div>
 
     <div class="row my-5">
       <div class="col">
@@ -167,13 +179,13 @@
                 </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <p>1640 Riverside Drive, Hill Valley, California
-                <br/>info@mywebsite.com
+                <p>164 Riverside Drive, Hill Valley, London
+                <br/>info@mywebsite.co.uk
                 <br/>+ 01 234 567 88
                 <br/>+ 01 234 567 89</p>
             </div>
         <div>
-        <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
+        <div class="footer-copyright text-center">© 2021 Copyright: MyWebsite.com</div>
     </footer>
 
     <script src="main.js"></script>
@@ -185,24 +197,9 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-
-<script>
-
-  $(function() {
-    $('input[name="daterange"]').daterangepicker({
-      opens: 'center',
-      autoUpdateInput: true,
-      autoApply: true,
-      locale: { "format": 'MMMM D, YYYY' },
-      minDate: 'Mar 01 2021',
-      maxDate: 'Dec 31 2021'
-    })
-  });
-
-</script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
