@@ -92,7 +92,7 @@
           <div class="col">
 
             <div class="input-group input-group-lg">
-              <div class="input-group input-group-lg">
+              <div class="input-group input-group-lg"> <!-- Make normal x2 input and submit dd mm yyyy. Take value from there  -->
                 <input type="text" name="daterange" id="date" value="Mar 01 2021 - Mar 20 2021" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
               </div>
             </div>
@@ -190,9 +190,10 @@
 
 
 <script>
+
   $(function() {
     $('input[name="daterange"]').daterangepicker({
-      opens: 'left',
+      opens: 'center',
       autoUpdateInput: true,
       autoApply: true,
       locale: { "format": 'MMMM D, YYYY' },

@@ -29,19 +29,19 @@ fetch("https://tequila-api.kiwi.com/v2/search?fly_from=LON&fly_to=PRG&date_from=
 )
 
 
-
 let userFromInput = document.querySelector('#from');
 let userToInput = document.querySelector('#to');
-let userDateInput = document.querySelector('#date');
+let userDateInput = document.getElementsByClassName('date');;
 let submit = document.querySelector('#submit');
 
-
+/*
 const getSuggestions = () => {
     const fromQuery = userFromInput.value;
     const toQuery = userToInput.value;
+    const dateDepart = userDateInput.value;
 
     
-    fetch(`https://tequila-api.kiwi.com/v2/search?fly_from=${fromQuery}&fly_to=${toQuery}&date_from=${}&date_to=${}`, {
+    fetch(`https://tequila-api.kiwi.com/v2/search?fly_from=${fromQuery}&fly_to=${toQuery}&date_from=${dateDepart}&date_to=${}`, {
         "method": "GET",
         "headers": {
             "accept": "application/json",
@@ -54,4 +54,5 @@ const getSuggestions = () => {
     .catch(err => {
         console.error(err);
     })
-  }
+  }*/
+  
