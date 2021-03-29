@@ -39,79 +39,20 @@
       </div>
     </nav>
 
-    <div style="background:url(pexels-james-wheeler-417074.jpg) no-repeat; background-size: cover;" class="jumbotron jumbotron-fluid">
+    <div style="background:url(pexels-james-wheeler-417074.jpg) no-repeat; background-size: cover;" class="jumbotron jumbotron-fluid p-5">
       <div class="p-3 mb-2 bg-secondary text-white my-5">
-        <h4 class="display-3">
+        <h1 class="display-3">
           Booking your holiday
         </h1>
         <h4>
           Discover your destination
-        </h2>
-        <div class="row">
-          <div class="col">
-            <div class="btn-group">
-              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Return
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">One Way</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="btn-group">
-              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Economy
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Business</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        </h4>
 
         <div class="row">
           <div class="col">
 
             <div class="input-group input-group-lg">
-              <input type="text" placeholder="From type 3 letters" id="from" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            </div>
-          </div>
-
-          <div class="col">
-
-            <div class="input-group input-group-lg">
-              <input type="text" placeholder="To type 3 letters" id="to" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-
-            <div class="input-group input-group-lg">
-              <div class="input-group input-group-lg"> <!-- Make normal x2 input and submit dd mm yyyy. Take value from there  -->
-                <input type="text" id="datedepart" placeholder="dd/mm/yyyy" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
-              </div>
-            </div>
-
-            <div class="input-group input-group-lg">
-              <div class="input-group input-group-lg"> <!-- Make normal x2 input and submit dd mm yyyy. Take value from there  -->
-                <input type="text" id="datereturn" placeholder="dd/mm/yyyy" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
-              </div>
-            </div>
-  
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col">
-
-            <div class="input-group input-group-lg">
-              <input class="btn btn-success btn-lg btn-block" id="submit" type="submit" value="Submit">
+              <input class="btn btn-warning btn-lg btn-block" id="submit" type="submit" value="Top 10 Destinations!">
             </div>
           </div>
 
@@ -120,8 +61,8 @@
       </div>
     </div>
 
-    <div class="row my-5">
-      <div class="col" id="userinput">
+    <div class="row justify-content-center my-5">
+      <div style="width: 20rem;" id="userinput">
 
       </div>
     </div>
@@ -133,16 +74,18 @@
       </div>
     </div>
 
-    <div id="myData">
+    <div class="row justify-content-center my-5">
+      <div style="width: 50rem;" id="myData">
 
+      </div>
     </div>
 
-    <div class="row justify-content-center my-5">
+    <div class="row justify-content-center my-5 p-5">
       <div class="col-8 col-md-4">
         <!-- First card goes here -->
         <div class="card border-0">
+          <img src="destination.png" class="float-left" alt="Pin icon">
           <div class="card-body">
-            <img src="destination.png" class="float-left" alt="Pin icon">
             <p class="card-text text-left">You can find flights, hotels and holiday packages here under one umbrella, just a few clicks away.</p>
           </div>
         </div>
@@ -151,7 +94,7 @@
       <div class="col-8 col-md-4">
         <!-- Second card goes here -->
         <div class="card border-0">
-          <img src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/fun.png" class="card-img-top" alt="Fun Card">
+          <img src="airplane.png" class="card-img-top" alt="Fun Card">
           <div class="card-body">
             <p class="card-text text-center">With us, your data is kept secure, and trade associations like ABTA and ATOL protect your funds.</p>
           </div>
@@ -162,12 +105,13 @@
       <div class="col-8 col-md-4">
         <!-- Third card goes here -->
         <div class="card border-0">
-          <img src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/smart.png" class="card-img-top" alt="Fun Card">
+          <img src="passport.png" class="card-img-top" alt="Fun Card">
           <div class="card-body">
             <p class="card-text text-center">Our experts would be by your side throughout your trip, only a phone call away.</p>
           </div>
         </div>
       </div>
+    </div>
 
       <footer class="page-footer">
         <div class="container">
@@ -184,8 +128,8 @@
                 <br/>+ 01 234 567 88
                 <br/>+ 01 234 567 89</p>
             </div>
-        <div>
-        <div class="footer-copyright text-center">© 2021 Copyright: MyWebsite.com</div>
+          </div>
+        <div class="footer-copyright text-left">© 2021 Copyright: MyWebsite.com</div>
     </footer>
 
     <script src="main.js"></script>
