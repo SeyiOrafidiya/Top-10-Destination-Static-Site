@@ -3,7 +3,7 @@
 let mainContainer = document.getElementById("myData");
 let userContainer = document.getElementById("userinput");
 
-fetch("https://tequila-api.kiwi.com/v2/search?fly_from=LON&fly_to=MAD&date_from=01%2F08%2F2021&date_to=05%2F08%2F2021&return_from=03%2F09%2F2021&return_to=04%2F09%2F2021", {
+fetch("https://tequila-api.kiwi.com/v2/search?fly_from=LON&date_from=15%2F04%2F2021&date_to=25%2F04%2F2021", {
 	"method": "GET",
 	"headers": {
         "accept": "application/json",
@@ -19,12 +19,30 @@ fetch("https://tequila-api.kiwi.com/v2/search?fly_from=LON&fly_to=MAD&date_from=
 .then(jsonResponse => {
         for (let i = 1; i < 7; i++) {
             let utcDate = jsonResponse.data[i].route[0].local_departure;  // ISO-8601 formatted date returned from server
-            let utcDateReturn = jsonResponse.data[i].local_departure;
             let localDate = new Date(utcDate);
-            let localDateReturn = new Date(utcDateReturn);
-            let div = document.createElement("div");
-            div.innerHTML = `From: ${jsonResponse.data[i].cityFrom} To: ${jsonResponse.data[i].cityTo} Price per Adult: ${jsonResponse.data[i].fare.adults} Departure: ${localDate.toString().replace(":00 GMT+0100 (British Summer Time)", "")} Return: ${localDateReturn.toString().replace(":00 GMT+0100 (British Summer Time)", "")}`;
-            mainContainer.appendChild(div);
+
+            let divCard = document.createElement("div");
+            let divBody = document.createElement("div");
+            let h5 = document.createElement("h5");
+            let p = document.createElement("p");
+            let a = document.createElement("a");
+
+            divCard.classList.add("card");
+            divBody.classList.add("card-body", "text-center");
+            h5.classList.add("card-title", "text-center");
+            p.classList.add("card-text", "text-center");
+            a.classList.add("btn", "btn-info");
+            a.href = '#';
+
+            h5.innerHTML = `To: ${jsonResponse.data[i].cityTo}`;
+            p.innerHTML = `Price per Adult: £${jsonResponse.data[i].fare.adults} Departure: ${localDate.toString().replace(":00 GMT+0100 (British Summer Time)", "")}am`;
+            a.innerHTML = `Reserve ticket`;
+
+            mainContainer.appendChild(divCard);
+            divCard.appendChild(divBody);
+            divBody.appendChild(h5);
+            divBody.appendChild(p);
+            divBody.appendChild(a);
         }
     }
 )
@@ -51,7 +69,7 @@ const getSuggestions = () => { //REDUCE THIS. user input place and gets aggregat
     })
     .then(jsonResponse => {
         for (let i = 0; i < 11; i++) {
-            let ul = document.createElement("ul");
+ let ul = document.createElement("ul");
             let li = document.createElement("li");
             ul.classList.add("list-group", "list-group-numbered", "capitalize");
             li.classList.add("list-group-item");
@@ -68,12 +86,4 @@ const displaySuggestions = (event) => {
     getSuggestions();
   };
 
-  submit.addEventListener('click', displaySuggestions);
-
-  /*
-  .then(jsonResponse => {
-    for (let i = 0; i < 7; i++) {
-        let div = document.createElement("div");
-        div.innerHTML = `Test: ${jsonResponse.locations[i].slug}`;
-        userContainer.appendChild(div);
-    } */
+    submit.addEventListener('click', displaySuggestions);
